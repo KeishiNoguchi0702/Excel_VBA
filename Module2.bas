@@ -1,5 +1,20 @@
 Option Explicit
 
+Sub mysub4_7()
+
+    Rem forステートメント、増減両パターン
+    Dim i As Long
+    
+    For i = 1 To 5
+        Debug.Print "iの値:", i
+    Next i
+    
+    For i = 10 To 0 Step -3
+        Debug.Print "iの値：", i
+    Next i
+    
+End Sub
+
 Sub mysub4_6()
 
     Rem case文に条件式を追加したいときは、select case trueを冒頭に各行に条件を記述する
