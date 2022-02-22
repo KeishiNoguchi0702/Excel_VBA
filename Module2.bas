@@ -1,5 +1,23 @@
 Option Explicit
 
+Sub mysub4_5()
+
+    Dim char As String: char = "3"
+    Dim msg As String
+    
+    Select Case char
+        Case "0" To "9"
+            msg = "半角の数字です"
+        Case "A" To "Z", "a" To "z"
+            msg = "半角のアルファベットです"
+        Case Else
+            msg = "半角の数字でも半カウのアルファベットでもありません"
+    End Select
+    
+    Debug.Print msg
+    
+End Sub
+
 Sub mysub4_4()
     
     Dim point As Long: point = 49
