@@ -1,5 +1,23 @@
 Option Explicit
 
+Private Type Person
+    Name As String
+    Age As Long
+    Birthday As Date
+End Type
+
+Sub musub06()
+    
+    'ユーザ定義型
+    Dim p As Person
+    p.Name = "Bob"
+    p.Age = 25
+    p.Birthday = #1/1/1993#
+    
+    Debug.Print p.Name, p.Age, p.Birthday
+    
+End Sub
+
 Sub mysub05()
  
     'Eraseキーワードで配列を初期化できる。ただし、動的配列は初期化後にメモリ解放するものの、固定配列は解放しない（ローカルウィンドウで確認）
