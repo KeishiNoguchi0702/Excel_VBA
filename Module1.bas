@@ -1,7 +1,19 @@
-Attribute VB_Name = "Module1"
 Option Explicit
 
-Option Explicit
+Sub mysub02()
+    
+   '動的配列
+   Dim numbers() As Long
+   
+   ReDim numbers(1 To 2) As Long
+   numbers(1) = 10: numbers(2) = 30
+   Debug.Print numbers(1), numbers(2)
+   
+   ReDim Preserve numbers(1 To 3)
+   numbers(3) = 20
+   Debug.Print numbers(1), numbers(2), numbers(3)
+    
+End Sub
 
 Sub MySub()
 
