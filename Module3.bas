@@ -13,10 +13,10 @@ End Sub
 Sub my5_4()
     
     Rem Callキーワードを付けない場合、()は不要
-    SayHello ("Bob")
+    SayHello "bob"
     
     Rem しかし､なくてもエラーにはならない
-    SayHello "bob"
+    SayHello ("Bob")
     
 End Sub
 
