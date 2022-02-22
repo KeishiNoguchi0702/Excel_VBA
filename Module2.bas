@@ -1,8 +1,25 @@
 Option Explicit
 
+Sub mysub4_6()
+
+    Rem case文に条件式を追加したいときは、select case trueを冒頭に各行に条件を記述する
+    Dim text As String: text = "HOGFUGABA"
+    Dim msg As String
+    
+    Select Case True
+        Case text Like "*HOGE*"
+            msg = "HOGEを含みます"
+        Case text Like "*FUGA*"
+            msg = "FUGAを含みます"
+    End Select
+    
+    Debug.Print msg
+    
+End Sub
+
 Sub mysub4_5()
 
-    Dim char As String: char = "3"
+    Dim char As String: char = "A"
     Dim msg As String
     
     Select Case char
