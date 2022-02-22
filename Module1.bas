@@ -1,5 +1,20 @@
 Option Explicit
 
+Sub mysub05()
+ 
+    'Eraseキーワードで配列を初期化できる。ただし、動的配列は初期化後にメモリ解放するものの、固定配列は解放しない（ローカルウィンドウで確認）
+   Dim staticArray(1 To 3) As Long
+   staticArray(1) = 10: staticArray(2) = 30: staticArray(3) = 20
+   
+   Dim dinamicArray() As Long
+   ReDim dinamicArray(1 To 3)
+   dinamicArray(1) = 11: dinamicArray(2) = 31: dinamicArray(3) = 21
+   
+   Erase staticArray, dinamicArray
+   Stop
+    
+End Sub
+
 Sub mysub04()
     
     '配列に異なる型の値をまとめて格納
