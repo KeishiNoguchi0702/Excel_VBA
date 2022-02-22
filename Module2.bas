@@ -1,5 +1,25 @@
 Option Explicit
 
+Sub mysub4_4()
+    
+    Dim point As Long: point = 49
+    Dim msg As String
+    
+    Select Case point
+        Case 100
+            msg = "満点ですね！"
+        Case 97, 98, 99
+            msg = "ほぼ満点ですね！"
+        Case 80 To 96
+            msg = "すごいですね！"
+        Case Is >= 50
+            msg = "頑張りましたね"
+        Case Else
+            msg = "次頑張りましょう"
+    End Select
+    
+End Sub
+
 Sub musub4_3()
 
     Dim rank As String: rank = "優"
