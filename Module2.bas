@@ -1,5 +1,25 @@
 Option Explicit
 
+Sub mysub4_8()
+
+    Rem for~eachステートメントは、集合の要素の数が不明でも取り扱える利点がある
+    Rem 対象となるのは、コレクションまたは配列
+    Rem 集合がコレクションの場合はVariant型またはObject型､配列の場合はVariant型で事前に宣言しなければならない
+    
+    Dim ws As Worksheet
+    
+    For Each ws In ThisWorkbook.Sheets
+        Debug.Print ws.Name
+    Next ws
+    
+    Dim cell As Range
+    
+    For Each cell In Sheet1.Range("A2:C6")
+        Debug.Print cell.Address
+    Next cell
+    
+End Sub
+
 Sub mysub4_7()
 
     Rem forステートメント、増減両パターン
