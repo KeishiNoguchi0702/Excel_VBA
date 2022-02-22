@@ -1,6 +1,22 @@
 Option Explicit
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+Sub mysub4_9()
+
+    Rem 可読性はmysub4_8に比べて劣るが、インデックスを付けてデバッグしたいときなどはこちらが有効
+
+    Dim i As Long
+    For i = 1 To ThisWorkbook.Sheets.Count
+        Debug.Print i, ThisWorkbook.Sheets(i).Name
+    Next i
+    
+    For i = 1 To Sheet1.Range("A1:C2").Count
+        Debug.Print i, Sheet1.Range("A1:C2")(i).Address
+    Next i
+    
+End Sub
+
+Rem ----------------------------------------------------------------------------------------------------------------------------------------------
 Sub mysub4_8()
 
     Rem for~eachステートメントは、集合の要素の数が不明でも取り扱える利点がある
