@@ -1,20 +1,16 @@
 Attribute VB_Name = "Module1"
 Option Explicit
 
-Sub Sample001()
+Option Explicit
 
-    Dim rng As Range
-    Dim i As Long, v As Long, m As Long
+Sub MySub()
+
+    '固定配列の作成
+    Dim numbers(1, 1 To 3) As Long
+    numbers(0, 1) = 10: numbers(0, 2) = 20: numbers(0, 3) = 30
+    numbers(1, 1) = 11: numbers(1, 2) = 21: numbers(1, 3) = 31
     
-    For i = 2 To Cells(Rows.Count, 3).End(xlUp).Row
-        Set rng = Cells(i, 3).MergeArea
-        If rng.Count > 1 Then
-            rng.UnMerge
-            v = rng(1)
-            rng = Int(rng(1) / rng.Count)
-            m = v - (rng(1) * rng.Count)
-            rng.Resize(m) = rng(1) + 1
-        End If
-    Next
-
+    Debug.Print numbers(0, 1), numbers(0, 2), numbers(0, 3)
+    Debug.Print numbers(1, 1), numbers(1, 2), numbers(1, 3)
+    
 End Sub
