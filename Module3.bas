@@ -1,18 +1,29 @@
 Option Explicit
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+
 Sub my5_9()
 
     Dim x As Long: x = 10
-    Call Increment(x)
+    Call Increment_x(x)
     Debug.Print x: Rem 引数を値渡ししているため、xは10のままで表示される
+    
+    Dim y As Long: y = 10
+    Call Increment_y(y)
+    Debug.Print y: Rem 引数を参照渡ししているため、呼び出し先のプロシージャで加算された結果であるy=11が表示される
     
 End Sub
 
-Sub Increment(ByVal num As Long)
+Sub Increment_x(ByVal num As Long)
 
     num = num + 1
     
+End Sub
+
+Sub Increment_y(ByRef num As Long)
+
+    num = num + 1
+
 End Sub
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
