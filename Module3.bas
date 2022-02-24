@@ -1,6 +1,29 @@
 Option Explicit
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+Sub my5_12()
+
+    Dim x As Long, y As Long, z As Long
+    x = 10: y = 30: z = 20
+    
+    Call Increment5_12(x, y, z)
+    Debug.Print x, y, z
+    
+End Sub
+
+Sub Increment5_12(ByVal x As Long, ParamArray num() As Variant)
+
+    Rem 任意の数の引数を受け止めることができる。
+    Rem 引数リストの最後のみに指定でき、自動的にオプションになる。上の例では、引数yとzが追加で格納されている
+    
+    Dim i As Long
+    For i = LBound(num) To UBound(num)
+        num(i) = num(i) + 1
+    Next i
+    
+End Sub
+
+Rem ----------------------------------------------------------------------------------------------------------------------------------------------
 
 Sub my5_11()
 
