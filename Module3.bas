@@ -1,6 +1,32 @@
 Option Explicit
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+Type TaxPrice
+    price As Long
+    tax As Currency
+End Type
+
+Sub my5_16()
+
+    Rem Functionプロシージャは原則として１つの戻り値までしか返すことができない
+    Rem 複数の戻り値をFunctionプロシージャから取得するためには、ユーザ定義型などを用いる必要がある
+    Dim price As Long: price = 500
+    Dim t As TaxPrice: t = CalcTax(price)
+
+End Sub
+
+Function CalcTax(ByVal price As Long) As TaxPrice
+
+    Const TAX_RATE As Currency = 0.1
+    
+    Dim t As TaxPrice
+    t.tax = price * TAX_RATE
+    t.price = price + t.tax
+    CalcTax = t
+    
+End Function
+
+Rem ----------------------------------------------------------------------------------------------------------------------------------------------
 Sub my5_15()
 
     Rem Functionプロシージャの戻り値を受け取るパターン
