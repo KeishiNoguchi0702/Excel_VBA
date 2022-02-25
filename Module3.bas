@@ -1,6 +1,23 @@
 Option Explicit
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+Sub my5_13()
+
+    Rem Functionプロシージャの戻り値を受け取らずに、破棄するパターン
+    Dim x As Long: x = 100
+    GetTaxIncluded_2 x
+    
+End Sub
+
+Function GetTaxIncluded_2(ByVal price As Long) As Currency
+
+    Const TAX_RATE As Currency = 0.1
+    GetTaxIncluded_2 = price * (1 + TAX_RATE)
+    MsgBox GetTaxIncluded_2
+    
+End Function
+
+Rem ----------------------------------------------------------------------------------------------------------------------------------------------
 Sub my5_12()
 
     Dim x As Long, y As Long, z As Long
