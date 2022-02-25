@@ -1,7 +1,15 @@
 Option Explicit
 
 Rem ----------------------------------------------------------------------------------------------------------------------------------------------
-Sub my5_13()
+Sub my5_15()
+
+    Rem Functionプロシージャの戻り値を受け取るパターン
+    Dim x As Long: x = 100
+    Debug.Print GetTaxIncluded_2(x)
+    
+End Sub
+
+Sub my5_14()
 
     Rem Functionプロシージャの戻り値を受け取らずに、破棄するパターン
     Dim x As Long: x = 100
