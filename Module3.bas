@@ -1,11 +1,33 @@
 Option Explicit
 
-Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+'my5_16用のユーザ定義型変数
 Type TaxPrice
     price As Long
     tax As Currency
 End Type
 
+Rem ----------------------------------------------------------------------------------------------------------------------------------------------
+Sub my5_17()
+
+    Rem 参照渡しでFunctionプロシージャに複数の引数を渡し、戻り値として受けるのではなく、メモリ上の変数を書き換えてしまう方法
+    Dim price As Long: price = 500
+    Dim tax As Currency
+    Call CalcTax_2(price, tax)
+     
+    Debug.Print "税込価格", price
+    Debug.Print "税額", tax
+    
+End Sub
+
+Function CalcTax_2(ByRef price As Long, ByRef tax As Currency)
+
+    Const TAX_RATE As Currency = 0.1
+    tax = price * TAX_RATE
+    price = price + tax
+    
+End Function
+
+Rem ----------------------------------------------------------------------------------------------------------------------------------------------
 Sub my5_16()
 
     Rem Functionプロシージャは原則として１つの戻り値までしか返すことができない
